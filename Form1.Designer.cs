@@ -1,6 +1,6 @@
 ﻿namespace simpleCalculator
 {
-    partial class Form1
+    partial class mainWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,22 +31,22 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             textBox = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            btnSeven = new Button();
-            btnEight = new Button();
-            btnNine = new Button();
-            btnMultiply = new Button();
-            btnFour = new Button();
-            btnFive = new Button();
-            btnSix = new Button();
-            btnDivide = new Button();
-            btnOne = new Button();
-            btnTwo = new Button();
-            btnTree = new Button();
-            btnAddsubtract = new Button();
-            btnClear = new Button();
-            btnZero = new Button();
-            btnComa = new Button();
             btnEquals = new Button();
+            btnComa = new Button();
+            btnZero = new Button();
+            btnClear = new Button();
+            btnAddsubtract = new Button();
+            btnTree = new Button();
+            btnTwo = new Button();
+            btnOne = new Button();
+            btnDivide = new Button();
+            btnSix = new Button();
+            btnFive = new Button();
+            btnFour = new Button();
+            btnMultiply = new Button();
+            btnNine = new Button();
+            btnEight = new Button();
+            btnSeven = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -75,6 +75,7 @@
             textBox.Name = "textBox";
             textBox.Size = new Size(348, 74);
             textBox.TabIndex = 0;
+            textBox.TextChanged += textBox_TextChanged;
             // 
             // tableLayoutPanel2
             // 
@@ -110,136 +111,27 @@
             tableLayoutPanel2.Size = new Size(348, 314);
             tableLayoutPanel2.TabIndex = 1;
             // 
-            // btnSeven
+            // btnEquals
             // 
-            btnSeven.Dock = DockStyle.Fill;
-            btnSeven.Location = new Point(3, 3);
-            btnSeven.Name = "btnSeven";
-            btnSeven.Size = new Size(81, 72);
-            btnSeven.TabIndex = 0;
-            btnSeven.Text = "7";
-            btnSeven.UseVisualStyleBackColor = true;
+            btnEquals.Dock = DockStyle.Fill;
+            btnEquals.Location = new Point(264, 237);
+            btnEquals.Name = "btnEquals";
+            btnEquals.Size = new Size(81, 74);
+            btnEquals.TabIndex = 15;
+            btnEquals.Text = "=";
+            btnEquals.UseVisualStyleBackColor = true;
+            btnEquals.Click += button16_Click;
             // 
-            // btnEight
+            // btnComa
             // 
-            btnEight.Dock = DockStyle.Fill;
-            btnEight.Location = new Point(90, 3);
-            btnEight.Name = "btnEight";
-            btnEight.Size = new Size(81, 72);
-            btnEight.TabIndex = 1;
-            btnEight.Text = "8";
-            btnEight.UseVisualStyleBackColor = true;
-            // 
-            // btnNine
-            // 
-            btnNine.Dock = DockStyle.Fill;
-            btnNine.Location = new Point(177, 3);
-            btnNine.Name = "btnNine";
-            btnNine.Size = new Size(81, 72);
-            btnNine.TabIndex = 2;
-            btnNine.Text = "9";
-            btnNine.UseVisualStyleBackColor = true;
-            // 
-            // btnMultiply
-            // 
-            btnMultiply.Dock = DockStyle.Fill;
-            btnMultiply.Location = new Point(264, 3);
-            btnMultiply.Name = "btnMultiply";
-            btnMultiply.Size = new Size(81, 72);
-            btnMultiply.TabIndex = 3;
-            btnMultiply.Text = "X";
-            btnMultiply.UseVisualStyleBackColor = true;
-            // 
-            // btnFour
-            // 
-            btnFour.Dock = DockStyle.Fill;
-            btnFour.Location = new Point(3, 81);
-            btnFour.Name = "btnFour";
-            btnFour.Size = new Size(81, 72);
-            btnFour.TabIndex = 4;
-            btnFour.Text = "4";
-            btnFour.UseVisualStyleBackColor = true;
-            // 
-            // btnFive
-            // 
-            btnFive.Dock = DockStyle.Fill;
-            btnFive.Location = new Point(90, 81);
-            btnFive.Name = "btnFive";
-            btnFive.Size = new Size(81, 72);
-            btnFive.TabIndex = 5;
-            btnFive.Text = "5";
-            btnFive.UseVisualStyleBackColor = true;
-            // 
-            // btnSix
-            // 
-            btnSix.Dock = DockStyle.Fill;
-            btnSix.Location = new Point(177, 81);
-            btnSix.Name = "btnSix";
-            btnSix.Size = new Size(81, 72);
-            btnSix.TabIndex = 6;
-            btnSix.Text = "6";
-            btnSix.UseVisualStyleBackColor = true;
-            // 
-            // btnDivide
-            // 
-            btnDivide.Dock = DockStyle.Fill;
-            btnDivide.Location = new Point(264, 81);
-            btnDivide.Name = "btnDivide";
-            btnDivide.Size = new Size(81, 72);
-            btnDivide.TabIndex = 7;
-            btnDivide.Text = "÷";
-            btnDivide.UseVisualStyleBackColor = true;
-            // 
-            // btnOne
-            // 
-            btnOne.Dock = DockStyle.Fill;
-            btnOne.Location = new Point(3, 159);
-            btnOne.Name = "btnOne";
-            btnOne.Size = new Size(81, 72);
-            btnOne.TabIndex = 8;
-            btnOne.Text = "1";
-            btnOne.UseVisualStyleBackColor = true;
-            // 
-            // btnTwo
-            // 
-            btnTwo.Dock = DockStyle.Fill;
-            btnTwo.Location = new Point(90, 159);
-            btnTwo.Name = "btnTwo";
-            btnTwo.Size = new Size(81, 72);
-            btnTwo.TabIndex = 9;
-            btnTwo.Text = "2";
-            btnTwo.UseVisualStyleBackColor = true;
-            // 
-            // btnTree
-            // 
-            btnTree.Dock = DockStyle.Fill;
-            btnTree.Location = new Point(177, 159);
-            btnTree.Name = "btnTree";
-            btnTree.Size = new Size(81, 72);
-            btnTree.TabIndex = 10;
-            btnTree.Text = "3";
-            btnTree.UseVisualStyleBackColor = true;
-            // 
-            // btnAddsubtract
-            // 
-            btnAddsubtract.Dock = DockStyle.Fill;
-            btnAddsubtract.Location = new Point(264, 159);
-            btnAddsubtract.Name = "btnAddsubtract";
-            btnAddsubtract.Size = new Size(81, 72);
-            btnAddsubtract.TabIndex = 11;
-            btnAddsubtract.Text = "+ / -";
-            btnAddsubtract.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            btnClear.Dock = DockStyle.Fill;
-            btnClear.Location = new Point(3, 237);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(81, 74);
-            btnClear.TabIndex = 12;
-            btnClear.Text = "C";
-            btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
+            btnComa.Dock = DockStyle.Fill;
+            btnComa.Location = new Point(177, 237);
+            btnComa.Name = "btnComa";
+            btnComa.Size = new Size(81, 74);
+            btnComa.TabIndex = 14;
+            btnComa.Text = ",";
+            btnComa.UseVisualStyleBackColor = true;
+            btnComa.Click += btnComa_Click;
             // 
             // btnZero
             // 
@@ -252,34 +144,156 @@
             btnZero.UseVisualStyleBackColor = true;
             btnZero.Click += button14_Click;
             // 
-            // btnComa
+            // btnClear
             // 
-            btnComa.Dock = DockStyle.Fill;
-            btnComa.Location = new Point(177, 237);
-            btnComa.Name = "btnComa";
-            btnComa.Size = new Size(81, 74);
-            btnComa.TabIndex = 14;
-            btnComa.Text = ",";
-            btnComa.UseVisualStyleBackColor = true;
+            btnClear.Dock = DockStyle.Fill;
+            btnClear.Location = new Point(3, 237);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(81, 74);
+            btnClear.TabIndex = 12;
+            btnClear.Text = "C";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
-            // btnEquals
+            // btnAddsubtract
             // 
-            btnEquals.Dock = DockStyle.Fill;
-            btnEquals.Location = new Point(264, 237);
-            btnEquals.Name = "btnEquals";
-            btnEquals.Size = new Size(81, 74);
-            btnEquals.TabIndex = 15;
-            btnEquals.Text = "=";
-            btnEquals.UseVisualStyleBackColor = true;
-            btnEquals.Click += button16_Click;
+            btnAddsubtract.Dock = DockStyle.Fill;
+            btnAddsubtract.Location = new Point(264, 159);
+            btnAddsubtract.Name = "btnAddsubtract";
+            btnAddsubtract.Size = new Size(81, 72);
+            btnAddsubtract.TabIndex = 11;
+            btnAddsubtract.Text = "+ / -";
+            btnAddsubtract.UseVisualStyleBackColor = true;
+            btnAddsubtract.Click += btnAddsubtract_Click;
             // 
-            // Form1
+            // btnTree
+            // 
+            btnTree.Dock = DockStyle.Fill;
+            btnTree.Location = new Point(177, 159);
+            btnTree.Name = "btnTree";
+            btnTree.Size = new Size(81, 72);
+            btnTree.TabIndex = 10;
+            btnTree.Text = "3";
+            btnTree.UseVisualStyleBackColor = true;
+            btnTree.Click += btnTree_Click;
+            // 
+            // btnTwo
+            // 
+            btnTwo.Dock = DockStyle.Fill;
+            btnTwo.Location = new Point(90, 159);
+            btnTwo.Name = "btnTwo";
+            btnTwo.Size = new Size(81, 72);
+            btnTwo.TabIndex = 9;
+            btnTwo.Text = "2";
+            btnTwo.UseVisualStyleBackColor = true;
+            btnTwo.Click += btnTwo_Click;
+            // 
+            // btnOne
+            // 
+            btnOne.Dock = DockStyle.Fill;
+            btnOne.Location = new Point(3, 159);
+            btnOne.Name = "btnOne";
+            btnOne.Size = new Size(81, 72);
+            btnOne.TabIndex = 8;
+            btnOne.Text = "1";
+            btnOne.UseVisualStyleBackColor = true;
+            btnOne.Click += btnOne_Click;
+            // 
+            // btnDivide
+            // 
+            btnDivide.Dock = DockStyle.Fill;
+            btnDivide.Location = new Point(264, 81);
+            btnDivide.Name = "btnDivide";
+            btnDivide.Size = new Size(81, 72);
+            btnDivide.TabIndex = 7;
+            btnDivide.Text = "÷";
+            btnDivide.UseVisualStyleBackColor = true;
+            btnDivide.Click += btnDivide_Click;
+            // 
+            // btnSix
+            // 
+            btnSix.Dock = DockStyle.Fill;
+            btnSix.Location = new Point(177, 81);
+            btnSix.Name = "btnSix";
+            btnSix.Size = new Size(81, 72);
+            btnSix.TabIndex = 6;
+            btnSix.Text = "6";
+            btnSix.UseVisualStyleBackColor = true;
+            btnSix.Click += btnSix_Click;
+            // 
+            // btnFive
+            // 
+            btnFive.Dock = DockStyle.Fill;
+            btnFive.Location = new Point(90, 81);
+            btnFive.Name = "btnFive";
+            btnFive.Size = new Size(81, 72);
+            btnFive.TabIndex = 5;
+            btnFive.Text = "5";
+            btnFive.UseVisualStyleBackColor = true;
+            btnFive.Click += btnFive_Click;
+            // 
+            // btnFour
+            // 
+            btnFour.Dock = DockStyle.Fill;
+            btnFour.Location = new Point(3, 81);
+            btnFour.Name = "btnFour";
+            btnFour.Size = new Size(81, 72);
+            btnFour.TabIndex = 4;
+            btnFour.Text = "4";
+            btnFour.UseVisualStyleBackColor = true;
+            btnFour.Click += btnFour_Click;
+            // 
+            // btnMultiply
+            // 
+            btnMultiply.Dock = DockStyle.Fill;
+            btnMultiply.Location = new Point(264, 3);
+            btnMultiply.Name = "btnMultiply";
+            btnMultiply.Size = new Size(81, 72);
+            btnMultiply.TabIndex = 3;
+            btnMultiply.Text = "X";
+            btnMultiply.UseVisualStyleBackColor = true;
+            btnMultiply.Click += btnMultiply_Click;
+            // 
+            // btnNine
+            // 
+            btnNine.Dock = DockStyle.Fill;
+            btnNine.Location = new Point(177, 3);
+            btnNine.Name = "btnNine";
+            btnNine.Size = new Size(81, 72);
+            btnNine.TabIndex = 2;
+            btnNine.Text = "9";
+            btnNine.UseVisualStyleBackColor = true;
+            btnNine.Click += btnNine_Click;
+            // 
+            // btnEight
+            // 
+            btnEight.Dock = DockStyle.Fill;
+            btnEight.Location = new Point(90, 3);
+            btnEight.Name = "btnEight";
+            btnEight.Size = new Size(81, 72);
+            btnEight.TabIndex = 1;
+            btnEight.Text = "8";
+            btnEight.UseVisualStyleBackColor = true;
+            btnEight.Click += btnEight_Click;
+            // 
+            // btnSeven
+            // 
+            btnSeven.Dock = DockStyle.Fill;
+            btnSeven.Location = new Point(3, 3);
+            btnSeven.Name = "btnSeven";
+            btnSeven.Size = new Size(81, 72);
+            btnSeven.TabIndex = 0;
+            btnSeven.Text = "7";
+            btnSeven.UseVisualStyleBackColor = true;
+            btnSeven.Click += btnSeven_Click;
+            // 
+            // mainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(378, 424);
             Controls.Add(tableLayoutPanel1);
-            Name = "Form1";
+            Name = "mainWindow";
             Text = "MatCalc";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
