@@ -4,6 +4,7 @@ namespace simpleCalculator
     public partial class mainWindow : Form
     {
         private bool AddSubFlag = true;
+        private string KungFu = "༼ つ ◕◡◕ ༽つ";
         public mainWindow()
         {
             InitializeComponent();
@@ -48,16 +49,23 @@ namespace simpleCalculator
         }
         private void buttonEqual_Click(object sender, EventArgs e)
         {
-            var result = calculations(textBox.Text);
-            var resultTxt = result.ToString();
-            textBox.Text = resultTxt;
+            var lastChar = textBox.Text.LastOrDefault();
+            if (lastChar != 247 && lastChar != 120 && lastChar != default(char))
+            {
+                var result = calculations(textBox.Text);
+                var resultTxt = result.ToString();
+                textBox.Text = resultTxt;
+            }
         }
         private void buttonBackspace_Click(object sender, EventArgs e)
         {
-            if (textBox.Text.Length > 0)
+            if (textBox.Text.Length > 0 && textBox.Text !=KungFu)
             {
                 textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
             }
+            else if (textBox.Text.Contains(KungFu))
+                textBox.Text = string.Empty;
+            
         }
         private void buttonAddSub_Click(object sender, EventArgs e)
         {
@@ -83,7 +91,7 @@ namespace simpleCalculator
         }
         private void buttonKungFu_Click(object sender, EventArgs e)
         {
-            textBox.Text = "༼ つ ◕◡◕ ༽つ";
+            textBox.Text = KungFu;
         }
 
         #region chars
@@ -146,6 +154,10 @@ namespace simpleCalculator
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
             textBox.Text += "x";
+        }
+        private void buttonDivine_Click(object sender, EventArgs e)
+        {
+            textBox.Text += "÷";
         }
         #endregion
     }

@@ -262,6 +262,7 @@
             buttonDivine.TabIndex = 7;
             buttonDivine.Text = "÷";
             buttonDivine.UseVisualStyleBackColor = true;
+            buttonDivine.Click += buttonDivine_Click;
             // 
             // button9
             // 
