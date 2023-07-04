@@ -1,4 +1,4 @@
-using org.mariuszgromada.math.mxparser;
+﻿using org.mariuszgromada.math.mxparser;
 namespace simpleCalculator
 {
     public partial class mainWindow : Form
@@ -7,6 +7,8 @@ namespace simpleCalculator
         public mainWindow()
         {
             InitializeComponent();
+            textBox.ReadOnly = true;
+            textBox.Enabled = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -19,7 +21,6 @@ namespace simpleCalculator
         }
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-
         }
         private double calculations(string equation)
         {
@@ -28,11 +29,14 @@ namespace simpleCalculator
             {
                 switch (item)
                 {
-                    case '�':
+                    case '÷':
                         newEquation.Add('/');
                         continue;
                     case 'x':
                         newEquation.Add('*');
+                        continue;
+                    case ',':
+                        newEquation.Add('.');
                         continue;
                     default:
                         newEquation.Add(item);
@@ -79,8 +83,7 @@ namespace simpleCalculator
         }
         private void buttonKungFu_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            textBox.Text = random.Next(1, 10).ToString();
+            textBox.Text = "༼ つ ◕◡◕ ༽つ";
         }
 
         #region chars

@@ -74,9 +74,11 @@
             // textBox
             // 
             textBox.Dock = DockStyle.Fill;
+            textBox.Font = new Font("Futura Md BT", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             textBox.Location = new Point(3, 3);
             textBox.Multiline = true;
             textBox.Name = "textBox";
+            textBox.ReadOnly = true;
             textBox.Size = new Size(348, 79);
             textBox.TabIndex = 0;
             textBox.TextChanged += textBox_TextChanged;
