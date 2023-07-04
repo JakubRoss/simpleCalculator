@@ -8,7 +8,6 @@ namespace simpleCalculator
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -18,116 +17,133 @@ namespace simpleCalculator
         {
 
         }
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
 
-        private void button16_Click(object sender, EventArgs e) //btnEquals
+        }
+        private double calculations(string equation)
+        {
+            List<char> newEquation = new List<char>();
+            foreach (var item in equation)
+            {
+                switch (item)
+                {
+                    case '÷':
+                        newEquation.Add('/');
+                        continue;
+                    case 'x':
+                        newEquation.Add('*');
+                        continue;
+                    default:
+                        newEquation.Add(item);
+                        continue;
+                }
+            }
+            Expression expression = new Expression(string.Join("", newEquation));
+            return expression.calculate();
+        }
+        private void buttonEqual_Click(object sender, EventArgs e)
         {
             var result = calculations(textBox.Text);
             var resultTxt = result.ToString();
             textBox.Text = resultTxt;
         }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void buttonBackspace_Click(object sender, EventArgs e)
         {
             if (textBox.Text.Length > 0)
             {
                 textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
             }
         }
-
-        private void btnTree_Click(object sender, EventArgs e)
+        private void buttonAddSub_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "3";
-        }
-
-        private void btnComa_Click(object sender, EventArgs e)
-        {
-            textBox.Text = textBox.Text + "3";
-        }
-
-        private void btnOne_Click(object sender, EventArgs e)
-        {
-            textBox.Text = textBox.Text + "3";
-        }
-
-        private void btnTwo_Click(object sender, EventArgs e)
-        {
-            textBox.Text = textBox.Text + "2";
-        }
-
-        private void btnAddsubtract_Click(object sender, EventArgs e)
-        {
-
             var lastChar = textBox.Text.LastOrDefault();
-            if(AddSubFlag && lastChar != default(char))
+            if (AddSubFlag && lastChar != default(char))
             {
                 textBox.Text = lastChar == '-' ? textBox.Text
                     .Remove(textBox.Text.Length - 1, 1)
                     .Insert(textBox.Text.Length - 1, "+") : textBox.Text + "+";
                 AddSubFlag = false;
             }
-            else if(AddSubFlag == false && lastChar != default(char))
+            else if (AddSubFlag == false && lastChar != default(char))
             {
                 textBox.Text = lastChar == '+' ? textBox.Text
                     .Remove(textBox.Text.Length - 1, 1)
-                    .Insert(textBox.Text.Length - 1,"-") : textBox.Text + "-";
+                    .Insert(textBox.Text.Length - 1, "-") : textBox.Text + "-";
                 AddSubFlag = true;
             }
         }
-
-        private void btnFour_Click(object sender, EventArgs e)
+        private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "4";
+            textBox.Text = string.Empty;
+        }
+        private void buttonKungFu_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            textBox.Text = random.Next(1, 10).ToString();
         }
 
-        private void btnFive_Click(object sender, EventArgs e)
+        #region chars
+        private void button1_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "5";
+            textBox.Text += "1";
         }
 
-        private void btnSix_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "6";
+            textBox.Text += "2";
         }
 
-        private void btnDivide_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "÷";
+            textBox.Text += "3";
         }
 
-        private void btnSeven_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "7";
+            textBox.Text += "4";
         }
 
-        private void btnEight_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "8";
+            textBox.Text += "5";
         }
 
-        private void btnNine_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "9";
+            textBox.Text += "6";
         }
 
-        private void btnMultiply_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text + "x";
+            textBox.Text += "7";
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-
+            textBox.Text += "8";
         }
 
-        private double calculations(string equation)
+        private void button9_Click(object sender, EventArgs e)
         {
-            Expression expression = new Expression(equation);
-            return expression.calculate();
+            textBox.Text += "9";
         }
+        private void buttonComa_Click(object sender, EventArgs e)
+        {
+            textBox.Text += ",";
+        }
+        private void buttonLeftParenthesis_Click(object sender, EventArgs e)
+        {
+            textBox.Text += "(";
+        }
+        private void buttonRightParenthesis_Click(object sender, EventArgs e)
+        {
+            textBox.Text += ")";
+        }
+        private void buttonMultiply_Click(object sender, EventArgs e)
+        {
+            textBox.Text += "x";
+        }
+        #endregion
     }
 }
